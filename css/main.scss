@@ -1,0 +1,167 @@
+@import "nullstyle.scss";
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+	--Cyan: hsl(179, 62%, 43%);
+	--Bright-Yellow: hsl(71, 73%, 54%);
+	--Light-Gray: hsl(204, 43%, 93%);
+	--Grayish-Blue: hsl(218, 22%, 67%);
+}
+
+body {
+	font-size: 16px;
+	font-family: "Karla", 'Times New Roman', Times, serif;
+}
+
+main {
+	display: grid;
+	height: 100vh;
+	background: var(--Light-Gray);
+}
+
+.card {
+	margin: auto;
+	border-radius: 5px;
+	overflow: hidden;
+	max-width: 640px;
+
+	&__top {}
+
+	&__left {
+		background-color: var(--Cyan);
+	}
+
+	&__right {
+		background-color: hsl(179, 56%, 52%);
+	}
+}
+
+.container {
+	max-width: 1440px;
+	display: grid;
+	grid-template: [start] "top top" 23fr [row2] [row2] "left right" 27fr [row-end] / 1fr 1fr;
+}
+
+.top {
+	padding: 40px;
+	background: #fff;
+	grid-area: top;
+
+	&__title {
+		color: var(--Cyan);
+		font-weight: 700;
+		font-size: 24px;
+		margin-bottom: 25px;
+	}
+
+	&__condition {
+		color: var(--Bright-Yellow);
+		font-weight: 700;
+		font-size: 18px;
+		margin-bottom: 12px;
+	}
+
+	&__text {
+		color: var(--Grayish-Blue);
+		line-height: 1.6;
+	}
+}
+
+.left {
+	color: var(--Light-Gray);
+	padding: 40px;
+	grid-area: left;
+
+	&__title {
+		font-weight: 700;
+		margin-bottom: 22px;
+		font-size: 18px;
+	}
+
+	&__price {
+		display: flex;
+		align-items: center;
+		margin-bottom: 12px;
+	}
+
+	&__price-amount {
+		font-size: 32px;
+		font-weight: 700;
+	}
+
+	&__price-text {
+		font-size: 15px;
+		color: hsla(204, 43%, 93%, 0.5);
+		font-weight: 400;
+		padding-left: 0.8em;
+	}
+
+	&__text {
+		color: hsla(204, 43%, 93%, 0.8);
+		margin-bottom: 30px;
+	}
+
+	&__link {
+		display: flex;
+		justify-content: center;
+		background-color: var(--Bright-Yellow);
+		color: #fff;
+		font-weight: 700;
+		border-radius: 5px;
+		overflow: hidden;
+		border: 1px solid rgb(66, 234, 29);
+		line-height: 2.8em;
+		align-items: center;
+		box-shadow: 0px 2px 110px rgb(105, 104, 104);
+	}
+}
+
+.right {
+	padding: 40px;
+	grid-area: right;
+
+	&__title {
+		color: var(--Light-Gray);
+		font-weight: 700;
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	&__list {}
+}
+
+.list {
+
+	&__item {
+
+		& a {
+			color: hsla(204, 43%, 93%, 0.6);
+			font-size: 14px;
+			line-height: 1.4em;
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+
+	right,
+	.left,
+	.top {
+		padding: 30px;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	.container {
+		max-width: 310px;
+		grid-template: [start] "top top" 9fr [row2] [row2] "left left" 8fr [row3] [row3] "right right" 8fr [row-end] / 1fr;
+	}
+
+	.right,
+	.left,
+	.top {
+		padding: 25px;
+	}
+
+
+}
