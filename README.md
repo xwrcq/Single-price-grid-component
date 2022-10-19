@@ -1,5 +1,7 @@
 # Frontend Mentor - Single price grid component
 
+https://xwrcq.github.io/Single-price-grid-component/
+
 ![Design preview for the Single price grid component coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
